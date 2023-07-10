@@ -1,0 +1,32 @@
+#vmap {
+  width: 600px;
+  height: 400px;
+}
+
+#regions ul {
+  margin-top: 1.5rem;
+}
+#regions ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.button--clear {
+  background: #ececec;
+  color: #737373;
+  cursor: pointer;
+  display: inline-block;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: none;
+  border-radius: 5px;
+  font-family: "PT Sans", Tahoma, Geneva, sans-serif;
+  font-weight: bold;
+  line-height: 1.25;
+  padding: 0.512rem;
+  transition: 0.3s all ease;
+  text-decoration: none;
+  vertical-align: middle;
+  border: 1px solid #d8d8d8;
+  font-weight: normal;
+}
