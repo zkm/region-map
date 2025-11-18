@@ -10,10 +10,12 @@ $(document).ready(function () {
     $regionCentral = $(".region_central"),
     $regionMidwest = $(".region_midwest"),
     $regionSouth = $(".region_south"),
-    vmapBgColor = "#fafafa",
-    vmapHoverColor = "#9fcb80",
-    vmapSelectedColor = "rgb(116, 176, 74)",
-    vmapColor = "rgb(115, 115, 115)",
+    colorConfig = {
+      background: "#fafafa",
+      hover: "#9fcb80",
+      selected: "rgb(116, 176, 74)",
+      default: "rgb(115, 115, 115)"
+    },
     selectedStates = [],
     regions = {
       east: {
@@ -102,7 +104,7 @@ $(document).ready(function () {
     action = region.status ? "select" : "deselect";
 
     region.states.forEach(function (state) {
-      if (action === "select" || stateSelected(state.name)) {
+      if (action === "select" || (action === "deselect" && stateSelected(state.name))) {
         $vmap.vectorMap(action, state.code);
       }
     });
@@ -152,10 +154,7 @@ $(document).ready(function () {
 
   function removeStates(states) {
     states.forEach(function (state) {
-      if (stateSelected(state.name)) {
-        var index = selectedStates.indexOf(state.name);
-        selectedStates.splice(index, 1);
-      }
+      disableState(state.name);
     });
   }
 
@@ -163,11 +162,11 @@ $(document).ready(function () {
     $vmap.vectorMap({
       map: "usa_en",
       multiSelectRegion: true,
-      backgroundColor: vmapBgColor,
-      borderColor: vmapBgColor,
-      hoverColor: vmapHoverColor,
-      selectedColor: vmapSelectedColor,
-      color: vmapColor,
+      backgroundColor: colorConfig.background,
+      borderColor: colorConfig.background,
+      hoverColor: colorConfig.hover,
+      selectedColor: colorConfig.selected,
+      color: colorConfig.default,
       onLoad: function () {
         $regionEast.on("click", regions.east, toggleRegion);
         $regionWest.on("click", regions.west, toggleRegion);
