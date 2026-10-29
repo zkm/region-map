@@ -1,5 +1,14 @@
 # Region Map
 
+[![Deploy to Pages](https://github.com/zkm/region-map/actions/workflows/static.yml/badge.svg)](https://github.com/zkm/region-map/actions/workflows/static.yml)
+[![live demo](https://img.shields.io/website?url=https%3A%2F%2Fzkm.github.io%2Fregion-map%2F&label=live%20demo)](https://zkm.github.io/region-map/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=white)
+![JQVMap](https://img.shields.io/badge/JQVMap-5A5A5A)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-663399?logo=css&logoColor=white)
+
 An interactive USA regional map application that allows users to select and visualize different regions of the United States.
 
 ## Features
